@@ -80,7 +80,7 @@ func (a *Advertisement) unmarshall(b []byte) error {
 
 	// Utility function for creating a list of uuids.
 	uuidList := func(u []UUID, d []byte, w int) []UUID {
-		for len(d) > 0 {
+		for len(d) > w {
 			u = append(u, UUID{d[:w]})
 			d = d[w:]
 		}
